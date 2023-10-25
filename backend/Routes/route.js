@@ -50,7 +50,6 @@ route.post("/login", async (req, res) => {
     const validPassword = await bcrypt.compare(password, User.password);
     if (validPassword) {
       res.send({ success: true, msg: "user logged in successfully", User });
-      console.log(User);
     } else {
       res.send({ success: false, msg: "incorrect" });
     }
